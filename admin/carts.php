@@ -5,7 +5,7 @@ require 'auth.php';
 $prefix = getDBPrefix();
 $sql = "SELECT id, price, quantity, uid, created_at FROM {$prefix}cart ORDER BY created_at DESC";
 $back_cart_data = [];
-$cart = query($sql);
+$cart = queryAll($sql);
 foreach ($cart as $c) {
   $sql = "SELECT username FROM {$prefix}user WHERE id = '{$c['uid']}'";
   $user = queryOne($sql);

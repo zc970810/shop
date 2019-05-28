@@ -4,7 +4,7 @@ require 'auth.php';
 require '../db.func.php';
 $prefix = getDBPrefix();
 $sql = "SELECT * FROM {$prefix}product ORDER BY created_at DESC ";
-$data = query($sql);
+$data = queryAll($sql);
 require 'header.php';
 ?>
 <div class="row">

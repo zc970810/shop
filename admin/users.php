@@ -7,7 +7,7 @@ $prefix = getDBPrefix();
 $sql = "SELECT id, username, age, name, email, phone, created_at
 				FROM {$prefix}user ORDER BY created_at DESC";
 // 2. 执行查询
-$res = query($sql);
+$res = queryAll($sql);
 // 3. 遍历结果
 
 require 'header.php';

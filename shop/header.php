@@ -5,9 +5,10 @@ if (!empty($username)) {
 	$uid = getSession('id', 'shop');
 	// 从数据表查询购物车数据
 	$prefix = getDBPrefix();
-	$sql = "SELECT id, price, quantity, products 
-					FROM {$prefix}cart WHERE uid = '$uid'";
+	$sql = "SELECT id, price, quantity, products FROM {$prefix}cart WHERE uid = '$uid'";
+	// echo $sql;
 	$cart_header = queryOne($sql);
+
 	$cart_header['products'] = json_decode($cart_header['products'], true);
 } else {
 	// 从session查询购物车数据
@@ -79,7 +80,7 @@ if (!empty($username)) {
 						<ul class="menu-extra">
 							<li><a href="login.php"><span class="ti-user"></span> </a>
 								<?php if (empty($username)): ?>
-								<a href="login.php">注册</a>
+								<a href="login.php">登录|注册</a>
 								<?php else: ?>
 								欢迎回来， <?php echo $username; ?> <a href="logout.php">退出</a>
 								<?php endif; ?>

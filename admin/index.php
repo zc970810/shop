@@ -7,7 +7,7 @@ require 'auth.php';
 $prefix = getDBPrefix();
 $sql = "SELECT id,adminuser,created_at,login_at,login_ip 
 				FROM {$prefix}admin ORDER BY created_at DESC";
-$data = query($sql);
+$data = queryAll($sql);
 //3.遍历数据
 
 require 'header.php';
@@ -40,7 +40,7 @@ require 'header.php';
 						</th>
 						</thead>
 						<tbody>
-						<?php foreach ($data as $admin): ?>
+						<?php foreach ($data as $key => $admin): ?>
 						<tr>
 							<td>
 								<?php echo $admin['id']; ?>

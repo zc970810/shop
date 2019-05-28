@@ -5,7 +5,7 @@ require '../db.func.php';
 $prefix = getDBPrefix();
 $sql = "SELECT id, uid, price, quantity, created_at 
 				FROM {$prefix}order ORDER BY created_at DESC";
-$orders = query($sql);
+$orders = queryAll($sql);
 require 'header.php';
 ?>
 <div class="row">

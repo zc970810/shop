@@ -5,7 +5,7 @@ require '../db.func.php';
 // 2. 写sql语句
 $prefix = getDBPrefix();
 $sql = "SELECT id,name,price FROM {$prefix}product ORDER BY created_at DESC";
-$data = query($sql);
+$data = queryAll($sql);
 // 3. 遍历结果
 
 require 'header.php';

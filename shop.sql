@@ -25,8 +25,8 @@ CREATE TABLE `imooc_admin` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `adminuser` varchar(50) NOT NULL DEFAULT '',
   `adminpass` char(32) NOT NULL DEFAULT '',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `login_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL,
+  `login_at` datetime NOT NULL,
   `login_ip` bigint(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -48,7 +48,7 @@ CREATE TABLE `imooc_cart` (
   `quantity` int(10) unsigned NOT NULL DEFAULT '0',
   `products` text,
   `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -69,7 +69,7 @@ CREATE TABLE `imooc_order` (
   `quantity` int(10) unsigned NOT NULL DEFAULT '0',
   `products` text,
   `uid` int(10) unsigned NOT NULL DEFAULT '0',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -91,7 +91,7 @@ CREATE TABLE `imooc_product` (
   `description` text,
   `stock` int(10) unsigned NOT NULL DEFAULT '0',
   `price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
@@ -115,7 +115,7 @@ CREATE TABLE `imooc_user` (
   `age` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `email` varchar(100) NOT NULL DEFAULT '',
   `phone` varchar(20) NOT NULL DEFAULT '',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
